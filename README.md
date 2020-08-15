@@ -1,3 +1,3 @@
 ## Collapse Vanilla JS
 
-Open [https://damenor.github.io/vanilla-js-collapse/](example) to view it in the browser.
+Open [example](https://damenor.github.io/vanilla-js-collapse/) to view it in the browser.
