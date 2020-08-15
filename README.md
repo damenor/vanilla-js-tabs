@@ -1,3 +1,3 @@
 ## Collapse Vanilla JS
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [https://damenor.github.io/vanilla-js-collapse/](example) to view it in the browser.
