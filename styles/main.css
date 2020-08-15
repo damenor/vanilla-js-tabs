@@ -47,105 +47,75 @@ body {
   background-color: var(--color-background);
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 200px 16px 1fr;
-  padding: 16px;
+.hidden {
+  display: none;
 }
 
-#container-buttons {
+.tabs {
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.tabs__links {
+  display: flex;
   align-items: center;
-}
-
-#container-buttons button {
-  width: 100%;
-}
-
-button {
-  margin-bottom: 8px;
-  padding: 8px;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  color: var(--color-primary);
-  font-size: 20px;
-  cursor: pointer;
-  border: none;
-  background-color: var(--color-background);
-}
-
-button:active {
+  padding: 0 16px;
   box-shadow: var(--box-shadow-inset);
 }
 
-#container-collapses {
-  grid-column-start: 3;
-}
-
-.collapse {
-  width: 100%;
-  margin-bottom: 8px;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-}
-
-.collapse__header {
-  position: relative;
-  cursor: pointer;
-  padding-bottom: 0;
+.tabs__links-item, .tabs__links-item-add-tab {
+  padding: 8px 16px;
   color: var(--color-primary);
-  font-size: 20px;
-  text-align: center;
-  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.collapse__header::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  box-shadow: var(--box-shadow-inset);
+.tabs__links-item-add-tab {
+  margin-right: 16px;
+  border-right: 2px solid var(--color-primary);
 }
 
-.collapse__header.visible {
-  padding-bottom: 16px;
+.tabs__links-item--active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
 }
 
-.collapse__header.visible::before {
-  height: 8px;
-}
-
-.collapse__container {
+.tabs__container {
   overflow: hidden;
 }
 
-.collapse__container-item {
+.tabs__container-content {
   display: none;
-  padding: 8px;
-  padding-top: 16px;
+  padding: 16px;
   color: var(--color-grey);
-  font-size: 12px;
-  text-align: center;
+  text-align: justify;
 }
 
-.collapse__container.visible .collapse__container-item {
+.tabs__container-content--active {
   display: block;
+  animation: fadeIn .8s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
 @media (max-width: 600px) {
-  
-  .container {
-    grid-template-rows: 1fr 0 1fr;
-    grid-template-columns: 1fr;
+
+  .tabs__links {
+    justify-content: center;
   }
 
-  #container-collapses {
-    grid-column-start: 1;
+  .tabs__links-item-add-tab {
+    display: none;
   }
 
 }
